@@ -31,12 +31,10 @@ function sepia(img, width, height) {
             var g = (p>>8)&0xff;
             var b = p&0xff;
 
-            //calculate tr, tg, tb
             var tr = (0.393*r + 0.769*g + 0.189*b);
             var tg = (0.349*r + 0.686*g + 0.168*b);
             var tb = (0.272*r + 0.534*g + 0.131*b);
 
-            //check condition
             if(tr > 255){
                 r = 255;
             }else{
@@ -55,7 +53,6 @@ function sepia(img, width, height) {
                 b = tb;
             }
 
-            //set new RGB value
             p = (a<<24) | (r<<16) | (g<<8) | b;
 
             img.setRGB(y, x, p);
